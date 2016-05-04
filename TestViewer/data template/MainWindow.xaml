@@ -1,0 +1,34 @@
+﻿<Window x:Class="data_template.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:data_template"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="362.05" Width="459">
+
+    <Window.Resources>
+        <local:Cars x:Key="rsCarList">
+            <local:CarList Name="BMW" Desc="7시리즈" />
+            <local:CarList Name="혼다" Desc="어코드" />
+            <local:CarList Name="아우디" Desc="A6" />
+            <local:CarList Name="폭스바겐" Desc="뉴비틀" />
+            <local:CarList Name="크라이슬러" Desc="크로스파이어" />
+        </local:Cars>
+
+        <DataTemplate x:Key="carTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=Name}"/>
+                <TextBlock Text="{Binding Path=Desc}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="334" VerticalAlignment="Top" Width="434" Margin="0">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBlock" Margin="0,0,0,20"/>
+            <ListBox x:Name="listBox" Height="270" ItemsSource="{Binding Source={StaticResource rsCarList}}" ItemTemplate="{StaticResource carTemplate}"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>

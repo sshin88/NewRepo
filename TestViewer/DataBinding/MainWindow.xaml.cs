@@ -29,7 +29,7 @@ namespace DataBinding
             InitializeComponent();
 
             this.Loaded += OnLoad;
-            this.DataContext = MainWindow;
+            //this.DataContext = viewmodel;
         }
         
         private void OnLoad(object sender, RoutedEventArgs e)
@@ -64,12 +64,12 @@ namespace DataBinding
         }
     }
 
-    public class viewmodel : INotifyPropertyChanged
-    {
-
-        private void OnPropertyUpdate(string propertyName)
-        {
-
-        }
-    }
+//     public class viewmodel : INotifyPropertyChanged
+//     {
+// 
+//         private void OnPropertyUpdate(string propertyName)
+//         {
+// 
+//         }
+//     }
 }
