@@ -17,18 +17,19 @@
         </local:Cars>
 
         <DataTemplate x:Key="carTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding Path=Name}"/>
-                <TextBlock Text="{Binding Path=Desc}"/>
-            </StackPanel>
+            <Border Name="border" BorderBrush="red" BorderThickness="1" Padding="5" Margin="5">
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=Name}"/>
+                    <TextBlock Text="{Binding Path=Desc}"/>
+                </StackPanel>
+            </Border>
         </DataTemplate>
     </Window.Resources>
 
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="334" VerticalAlignment="Top" Width="434" Margin="0">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBlock" Margin="0,0,0,20"/>
-            <ListBox x:Name="listBox" Height="270" ItemsSource="{Binding Source={StaticResource rsCarList}}" ItemTemplate="{StaticResource carTemplate}"/>
-            
+            <ListBox x:Name="listBox" Height="270" ItemsSource="{Binding Source={StaticResource rsCarList}}" ItemTemplate="{StaticResource carTemplate}" HorizontalContentAlignment="Stretch"/>
         </StackPanel>
     </Grid>
 </Window>

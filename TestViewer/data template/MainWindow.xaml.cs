@@ -34,6 +34,13 @@ namespace data_template
         private string name;
         private string desc;
 
+        public CarList() { }
+        public CarList(string name, string desc)
+        {
+            this.Name = name;
+            this.Desc = desc;
+        }
+
         public string Name
         {
             get; set;
@@ -45,7 +52,13 @@ namespace data_template
         }
     }
 
-    public class Cars : ObservableCollection<CarList> { }
+    public class Cars : ObservableCollection<CarList>
+    {
+        public Cars() : base()
+        {
+            Add(new CarList("a", "b"));
+        }   
+    }
 }
 
 
