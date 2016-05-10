@@ -13,8 +13,13 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="217,141,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Test1}"/>
+        <WrapPanel HorizontalAlignment="Left" Height="109" Margin="73,96,0,0" VerticalAlignment="Top" Width="125">
+            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Style="{StaticResource Test1}"/>
+            <Button x:Name="button1" Content="Button" Width="75"/>
+            <Button x:Name="button2" Content="Button" Width="75"/>
+            <Button x:Name="button3" Content="Button" Width="75"/>
+        </WrapPanel>
     </Grid>
 </Window>
